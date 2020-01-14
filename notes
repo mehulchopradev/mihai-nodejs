@@ -1,0 +1,7 @@
+- Every nodejs program runs on a single thread (event loop)
+- Event queues
+    - Timers queue (callbacks of setimeout and setinterval are put in this queue)
+    - IO queue (callbacks of all the pending IO operations)
+- Event loop checks for the various queues in order
+    - Timers queue
+    - IO queue
