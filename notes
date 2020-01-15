@@ -5,3 +5,22 @@
 - Event loop checks for the various queues in order
     - Timers queue
     - IO queue
+
+
+- Promises
+    - was to write asynchronous code in a structured way
+    - asynchronous code must return a Promise object to the caller. Encapsulate asynchronous code inside a function
+    - Caller
+        then callback is called when the promise is resolved
+        catch callback is called when the promise is rejects
+
+- ES6 (async - await)
+    - Caller
+    async function userDefinedFunction() {
+        try {
+            const data = await asynchronousFunction() -- Promise
+            cosnt d2 = await anotherAsynchronousFunction(data); -- Promise
+        } catch(err) {
+            console.log(err);
+        }
+    }
