@@ -3,7 +3,6 @@
     - Timers queue (callbacks of setimeout and setinterval are put in this queue)
     - IO queue (callbacks of all the pending IO operations)
     - Events queue
-  - Next tick queue
 - Event loop checks for the various queues in order
     - Timers queue
     - IO queue
