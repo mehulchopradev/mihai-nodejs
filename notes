@@ -3,7 +3,11 @@
     - Timers queue (callbacks of setimeout and setinterval are put in this queue)
     - IO queue (callbacks of all the pending IO operations)
     - Events queue
-  - Next tick queue
+    - Closing operations queue
+  - Next tick queue : High priority queue
+    - you can place a callback in this queue using process.nextTick()
+  - Microtasks queue : High priority queue (but less than next tick queue)
+    - All Promise resolve callbacks (callbacks in .then) will be put in this queue
 - Event loop checks for the various queues in order
     - Timers queue
     - IO queue

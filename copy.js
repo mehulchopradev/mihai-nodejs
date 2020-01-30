@@ -5,12 +5,13 @@ exports.copy = function (source, destination) {
     // publisher - subscriber pattern
     const eventEmitter = new EventEmitter()
 
+    process.nextTick(() => {
+        eventEmitter.emit('copyInit');
+    });
+
     fs.readFile(source)
         .then((data) => {
             eventEmitter.emit('readSuccess', data);
-
-            eventEmitter.emit('operationStart');
-            eventEmitter.emit('operationStart');
 
             return fs.writeFile(destination, data)
         }, (err) => {

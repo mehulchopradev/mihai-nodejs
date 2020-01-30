@@ -4,8 +4,13 @@ const { fibo } = require('./series');
 const copyObj = copy('notes', 'notes_copy');
 
 // 'once' function to subscriber for only a single event of this name
-copyObj.once('operationStart', () => {
+/* copyObj.once('operationStart', () => {
     console.log('Operation starts...');
+}); */
+
+copyObj.on('copyInit', () => {
+    // some initialization before the copy operation starts
+    console.log('Init code before copy');
 });
 
 // 'on' funtion to subscribe for the multiple events of this name
